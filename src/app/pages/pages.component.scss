@@ -88,6 +88,27 @@
     }
 }
 
+.mh-400{
+    max-height: 400px !important;
+}
+
+.slidein {
+    float:right;
+
+    animation-duration: .8s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-right: -70%;
+    }
+    to {
+        margin-right: 0%;
+    }
+}
+
+
 @media (max-width:760px) {
     .subtitle{
         padding: 0 !important;
