@@ -128,7 +128,11 @@
         top:calc(#{$width}/-1);
         left:calc(#{$width}/-1);
         box-shadow: 0 4px 4px #D91D5A;
-        background:linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to left, $color 0%, $color 100%);
+        background:linear-gradient(to right, $color 0%, $color 100%), 
+                   linear-gradient(to top, $color 50%, transparent 50%), 
+                   linear-gradient(to top, $color 50%, transparent 50%), 
+                   linear-gradient(to right, $color 0%, $color 100%), 
+                   linear-gradient(to left, $color 0%, $color 100%);
         background-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
         background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
         background-repeat:no-repeat, no-repeat;
