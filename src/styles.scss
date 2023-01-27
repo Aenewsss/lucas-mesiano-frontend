@@ -32,13 +32,16 @@ a{
         color: unset;    
     }
 }
+.mh-500{
+    max-height: 500px !important;
+}
 
 h1{
     transition: .4s ease-in-out;
     cursor: pointer;
     &:hover{
         color: #D91D5A !important;
-        transform: scale(1.3);
+        transform: scale(1.01);
     }
 }
 
