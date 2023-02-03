@@ -1,16 +1,20 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-::-webkit-scrollbar{
+:root{
+    --magentela: #D91D5A
+}
+
+::-webkit-scrollbar {
     height: 10px;
     width: 8px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: #303030;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background-color: #D91D5A;
 }
@@ -24,37 +28,40 @@ body {
     background-color: #303030;
 }
 
-a{
+a {
     text-decoration: none;
     color: unset;
 
-    &:hover{
-        color: unset;    
+    &:hover {
+        color: unset;
     }
 }
-.mh-500{
+
+.mh-500 {
     max-height: 500px !important;
 }
 
-h1{
+h1 {
     transition: .4s ease-in-out;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #D91D5A !important;
         transform: scale(1.01);
     }
 }
 
-h2{
+h2 {
     transition: .4s ease-in-out;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #D91D5A;
         transform: scale(1.05);
     }
 }
 
-h2::before{
+h2::before {
     content: '';
     position: absolute;
     width: 10px;
@@ -65,7 +72,7 @@ h2::before{
     transform: translateX(-50%);
 }
 
-h2::after{
+h2::after {
     content: '';
     position: absolute;
     width: 100px;
@@ -76,16 +83,45 @@ h2::after{
     transform: translateX(-50%);
 }
 
-.card{
+.card {
     cursor: pointer;
-}
-
-.card:hover{
-    transform: scale(1.07);
     transition: .4s ease-in-out;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
 
-.text-magentela{
+
+.text-magentela {
     color: #D91D5A !important;
+}
+
+.w-50p {
+    width: 60px;
+}
+.hover {
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.hover:hover {
+    transform: scale(1.05);
+}
+
+.text-border {
+    color: transparent !important;
+    -webkit-text-stroke: 1px white ;
+}
+
+.text-mesiano {
+    font-size: 8rem;
+}
+
+.fs-6rem{
+    font-size: 6rem;
+}
+
+.fill-white:hover{
+    color: white !important;
 }
