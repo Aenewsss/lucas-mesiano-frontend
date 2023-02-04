@@ -1,7 +1,16 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-:root{
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap') format('woff');
+}
+
+@font-face {
+    font-family: 'GothamBlack';
+    src: url("./assets/fonts/gotham-black.ttf");
+}
+
+:root {
     --magentela: #D91D5A
 }
 
@@ -25,7 +34,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #303030;
+    background-color: #000000;
 }
 
 a {
@@ -37,8 +46,8 @@ a {
     }
 }
 
-.mh-500 {
-    max-height: 500px !important;
+.mh-600 {
+    max-height: 600px !important;
 }
 
 h1 {
@@ -100,6 +109,7 @@ h2::after {
 .w-50p {
     width: 60px;
 }
+
 .hover {
     cursor: pointer;
     transition: .4s ease;
@@ -111,17 +121,55 @@ h2::after {
 
 .text-border {
     color: transparent !important;
-    -webkit-text-stroke: 1px white ;
+    -webkit-text-stroke: 1px white;
 }
 
 .text-mesiano {
     font-size: 8rem;
 }
 
-.fs-6rem{
+.fs-6rem {
     font-size: 6rem;
 }
 
-.fill-white:hover{
+.fill-white:hover {
     color: white !important;
+}
+
+.shadow-magentela {
+    text-shadow: 4px 4px 10px var(--magentela);
+}
+
+.shadow-white {
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.img-mesi {
+    --angle: 0deg;
+    border: 1px solid;
+    border-image: linear-gradient(var(--angle), var(--magentela), black) 1;
+    animation: 1s mesi-img linear infinite, 5s floating ease-in-out infinite;
+    transform: translate(0, 0);
+}
+
+@keyframes mesi-img {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }  
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.ff-gotham {
+    font-family: 'GothamBlack';
 }

@@ -1,3 +1,7 @@
+:root {
+    --magentela: #D91D5A
+}
+
 .header {
     background-image: url('../../assets/pc.png');
     background-repeat: no-repeat;
@@ -7,10 +11,7 @@
 
 .btn-magentela {
     background-color: #D91D5A;
-}
-
-.btn-magentela {
-    background-color: #D91D5A;
+    box-shadow: 0px 0px 50px -10px var(--magentela);
 
     &:hover {
         background-color: #d91d59cf;
@@ -112,45 +113,49 @@
 }
 
 .box-shadow {
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4),
-        -3px -3px 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 4px 0 rgba(255, 255, 255, 0.4),
+        -3px -3px 4px 0 rgba(255, 255, 255, 0.4);
 }
 
 .border-magentela-shadow {
     border-color: #D91D5A;
     box-shadow: 0 0 10px #D91D5A;
 }
-@mixin magic-border($width, $color, $duration, $direction){
-    position:relative;
-      &:before{
-        content:'';
-        position:absolute;
+
+@mixin magic-border($width, $color, $duration, $direction) {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
         width:calc(100% + #{$width * 2});
         height:calc(100% + #{$width * 2});
         top:calc(#{$width}/-1);
         left:calc(#{$width}/-1);
         box-shadow: 0 4px 4px #D91D5A;
-        background:linear-gradient(to right, $color 0%, $color 100%), 
-                   linear-gradient(to top, $color 50%, transparent 50%), 
-                   linear-gradient(to top, $color 50%, transparent 50%), 
-                   linear-gradient(to right, $color 0%, $color 100%), 
-                   linear-gradient(to left, $color 0%, $color 100%);
-        background-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
-        background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-        background-repeat:no-repeat, no-repeat;
-        transition:transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
-        transform:scaleX(0) rotate(180deg * $direction);
-        transition-delay:$duration*2, $duration, 0s;
-      }
-      &:hover{
-        &:before{
-          background-size:200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
-          background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-          transform:scaleX(1) rotate(180deg * $direction);
-          transition-delay:0s, $duration, $duration*2;
+        background: linear-gradient(to right, $color 0%, $color 100%),
+            linear-gradient(to top, $color 50%, transparent 50%),
+            linear-gradient(to top, $color 50%, transparent 50%),
+            linear-gradient(to right, $color 0%, $color 100%),
+            linear-gradient(to left, $color 0%, $color 100%);
+        background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+        background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+        background-repeat: no-repeat, no-repeat;
+        transition: transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
+        transform: scaleX(0) rotate(180deg * $direction);
+        transition-delay: $duration*2, $duration, 0s;
+    }
+
+    &:hover {
+        &:before {
+            background-size: 200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+            background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+            transform: scaleX(1) rotate(180deg * $direction);
+            transition-delay: 0s, $duration, $duration*2;
         }
-      }
-  }
+    }
+}
+
 .border-gradient {
     @include magic-border(2px, #D91D5A, 0.3s, 0);
 }
