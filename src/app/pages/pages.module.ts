@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProposalComponent } from './proposal/proposal.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     PagesComponent,
     NavbarComponent,
     FeedbacksComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ProposalComponent
   ],
   imports: [
     CommonModule,
