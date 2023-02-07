@@ -5,12 +5,14 @@ import { PagesRoutingModule } from './pages.routing';
 import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
-    NavbarComponent
+    NavbarComponent,
+    FeedbacksComponent
   ],
   imports: [
     CommonModule,
