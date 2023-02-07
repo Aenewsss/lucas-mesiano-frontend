@@ -371,3 +371,46 @@ h2::after {
         height: 400px;
     }
 }
+
+.text-white-opacity{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.bg-white-opacity {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.mh-660{
+    max-height: 660px;
+}
+
+.iphone-image{
+    left: 0;
+    z-index: 2;
+}
+
+.iphone-video {
+    left: 5px;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+.w-fit{width: fit-content;}
+
+.w-360{
+    width: 360px;
+}
+
+.h-660{height: 660px;}
+
+.ov-hidden{
+    overflow: hidden;
+}
+
+.camera-iphone{
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+    z-index: 3;
+}
+

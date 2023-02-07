@@ -6,13 +6,15 @@ import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
     NavbarComponent,
-    FeedbacksComponent
+    FeedbacksComponent,
+    PortfolioComponent
   ],
   imports: [
     CommonModule,
