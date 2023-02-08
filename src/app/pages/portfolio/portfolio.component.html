@@ -1,4 +1,4 @@
-<section class="container portfolio text-center text-white mt-5 pt-5 mb-5">
+<section class="container portfolio text-center text-white mt-5 pt-5 mb-5 pb-5">
     <h1 class="display-1 text-border fill-white fs-6rem" id="portfolio">Portfolio</h1>
 
     <div class="row d-flex justify-content-center mt-5 slide-right">
@@ -34,19 +34,18 @@
     </div>
 
     <div class="row d-flex justify-content-center mt-5 slide-right pb-5">
-        <div class="d-flex flex-column align-items-start text-white-opacity mt-5 pt-5">
+        <div class="d-flex flex-column align-items-start text-white-opacity mt-5 pt-5 pb-5 mb-5">
             <h3>Horizontais</h3>
             <hr class="w-100 m-0">
         </div>
 
-        <div class="col-md-3 mt-5 d-flex align-items-center justify-content-center" *ngFor="let video of horizontais">
-            <div class="card border-0 bg-transparent position-relative overflow-hidden box-shadow">
-                <img class="img-fluid mh-400" src={{video.thumb}} alt="Thumbnail+Consultoria+RF.png">
-                <a href={{video.url}} class="card-text position-absolute w-100 h-100" target="_blank">
-                    <div class="card-text position-absolute w-100 h-100">
-                        <p class=" position-absolute fw-bold fs-5">{{video.title}}</p>
-                    </div>
-                </a>
+        <div class="col-md-12 mt-5 d-flex align-items-center justify-content-center" *ngFor="let video of horizontais; let index = index">
+            <div class="card border-0 bg-transparent position-relative">
+                <video (click)="playOrPauseVideoDesktop(index)" id=videoDesktop{{index}} class="img-fluid mh-600" poster={{video.thumb}} src={{video.url}}></video>
+                <span [ngClass]="{'d-none': !videoHorizontalPaused}" (click)="playOrPauseVideoDesktop(index)" class="w-100 display-3 position-absolute text-uppercase fs-6rem fw-bold title-video-desktop">
+                    <span class="text-border">{{video.titleBorder}}</span>
+                    {{video.title}}
+                </span>
             </div>
         </div>
     </div>

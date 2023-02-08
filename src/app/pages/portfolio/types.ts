@@ -5,6 +5,7 @@ export interface IVerticais {
 
 export interface IHorizontais {
     title: string,
+    titleBorder: string,
     url: string,
     thumb: string
 }

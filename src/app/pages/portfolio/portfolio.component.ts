@@ -33,14 +33,16 @@ export class PortfolioComponent implements OnInit {
 
   horizontais: IHorizontais[] = [
     {
-      title: "Consultoria Rafael Ferreira",
+      titleBorder: "Consultoria",
+      title: "Rafael Ferreira",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/RafaelFerreiraConsultoria.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/Thumbnail+Consultoria+RF.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/consultoria-rf.png"
     },
     {
-      title: "Super Time",
+      titleBorder: "Super",
+      title: "Time",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/SuperTime.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/Thumbnail+Super+Time.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/super-time.png"
     },
   ]
 
@@ -53,7 +55,11 @@ export class PortfolioComponent implements OnInit {
   videoPaused: string = "../../../assets/icons/pause.svg";
   videoPlayed: string = "../../../assets/icons/play.svg";
 
+  videoHorizontalPaused: boolean = true;
+
   currentIcon: string = this.videoPlayed;
+  ngOnInit(): void {
+  }
 
   prevVideo() {
     if ((this.currentVideoMobile.index - 1) < 0) {
@@ -83,7 +89,7 @@ export class PortfolioComponent implements OnInit {
       this.currentIcon = this.videoPlayed;
     }
   }
-
+  
   nextVideo() {
     if ((this.currentVideoMobile.index + 1) > this.verticais.length - 1) {
       this.currentVideoMobile.index = 0;
@@ -99,7 +105,18 @@ export class PortfolioComponent implements OnInit {
     this.currentIcon = this.videoPlayed;
   }
 
-  ngOnInit(): void {
+  playOrPauseVideoDesktop(index: number) {
+    const video = document.getElementById(`videoDesktop${index}`) as HTMLVideoElement;
+    if (video.paused) {
+      video.play();
+      this.videoHorizontalPaused = false;
+    }
+    else {
+      video.pause();
+      this.videoHorizontalPaused = true;
+    }
   }
+
+
 
 }
