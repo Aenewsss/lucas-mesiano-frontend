@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProposalComponent } from './proposal/proposal.component';
+import { TopComponent } from './top/top.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { ProposalComponent } from './proposal/proposal.component';
     NavbarComponent,
     FeedbacksComponent,
     PortfolioComponent,
-    ProposalComponent
+    ProposalComponent,
+    TopComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

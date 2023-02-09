@@ -146,9 +146,9 @@ h2::after {
 
 .img-mesi {
     --angle: 0deg;
-    border: 1px solid;
-    border-image: linear-gradient(var(--angle), var(--magentela), black) 1;
-    animation: 1s mesi-img linear infinite, 5s floating ease-in-out infinite;
+    border-bottom: 1px solid var(--magentela);
+    // border-image: linear-gradient(var(--angle), var(--magentela), black) 1;
+    animation: 5s floating ease-in-out infinite;
     transform: translate(0, 0);
 }
 
@@ -159,9 +159,17 @@ h2::after {
 }
 
 @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }  
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
 }
 
 @property --angle {
@@ -174,7 +182,7 @@ h2::after {
     font-family: 'GothamBlack';
 }
 
-.img-feeedback{
+.img-feeedback {
     max-width: 80px;
     border-radius: 50%;
 }
@@ -372,7 +380,7 @@ h2::after {
     }
 }
 
-.text-white-opacity{
+.text-white-opacity {
     color: rgba(255, 255, 255, 0.75);
 }
 
@@ -380,11 +388,11 @@ h2::after {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-.mh-660{
+.mh-660 {
     max-height: 660px;
 }
 
-.iphone-image{
+.iphone-image {
     left: 0;
     z-index: 2;
 }
@@ -395,33 +403,68 @@ h2::after {
     border-radius: 50px;
 }
 
-.w-fit{width: fit-content;}
+.w-fit {
+    width: fit-content;
+}
 
-.w-360{
+.w-360 {
     width: 360px;
 }
 
-.h-660{height: 660px;}
+.h-660 {
+    height: 660px;
+}
 
-.ov-hidden{
+.ov-hidden {
     overflow: hidden;
 }
 
-.camera-iphone{
+.camera-iphone {
     left: 50%;
     transform: translateX(-50%);
     top: 40px;
     z-index: 3;
 }
 
-.logo-mesi-form{
+.logo-mesi-form {
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.title-video-desktop{
+.title-video-desktop {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.insta-fix {
+    top: 20px;
+    right: 30px;
+}
+
+.top{
+    background: radial-gradient( #212121 0%, #000000 90%);
+}
+
+.about-vertical{
+    border-top: 2px solid var(--magentela) ;
+    border-left: 2px solid var(--magentela) 
+}
+.about-horizontal{
+    border-bottom: 2px solid var(--magentela) ;
+    border-right: 2px solid var(--magentela) ;
+}
+
+.names{
+    animation: names 30s linear infinite;
+}
+
+@keyframes names {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
