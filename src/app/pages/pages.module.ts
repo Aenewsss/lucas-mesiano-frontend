@@ -10,6 +10,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { TopComponent } from './top/top.component';
 import { AboutComponent } from './about/about.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AboutComponent } from './about/about.component';
     CommonModule,
     RouterModule,
     PagesRoutingModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

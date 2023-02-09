@@ -1,25 +1,53 @@
 <section class="container portfolio text-center text-white mt-5 mb-5">
     <h1 class="display-1 fs-6rem pb-5" id="portfolio">
-        <span class="text-border fill-white">ENTRE </span>
-        <span class="text-white">EM CONTATO</span>
+        <span class="text-border fill-white">Entre</span>
+        <span class="text-white">&nbsp;em contato</span>
     </h1>
 
-    <div class="position-relative border-magentela bg-dark mt-5 p-5 pt-0">
+    <div class="position-relative border-magentela bg-other-black mt-5 p-5 pt-0">
         <img width="100" height="80" class="position-absolute logo-mesi-form" src="../../../assets/logomesi.svg" alt="">
 
-        
-        <div class="row pt-5">
-            <h3 class="pt-5 mt-5">Envie sua proposta e vamos <br> fazer seu projeto bombar!</h3>
+        <div class="row">
+            <h3 class="mt-5 display-5">Envie sua proposta e vamos <br> fazer seu projeto bombar!</h3>
             <div class="col-md-12 text-magentela text-start">
                 <h3>Dados pessoais</h3>
                 <hr class="w-100 m-0">
             </div>
-            <div class="col-md-6 mt-3">
-
+            <div class="col-md-4 mt-5 d-flex flex-column align-items-start gap-2">
+                <label class="fs-5">Como posso te chamar?</label>
+                <input type="text" [(ngModel)]="name" class="form-control bg-transparent text-white p-2"
+                    placeholder="Ex: Lucas Mesiano">
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-4 mt-5 d-flex flex-column align-items-start gap-2">
+                <label class="fs-5">Whatsapp</label>
+                <input [(ngModel)]="email" type="tel" class="form-control bg-transparent text-white p-2"
+                    placeholder="61 9 9999-9999">
             </div>
+            <div class="col-md-4 mt-5 d-flex flex-column align-items-start gap-2">
+                <label class="fs-5">Seu melhor e-mail</label>
+                <input [(ngModel)]="phone" type="email" class="form-control bg-transparent text-white p-2"
+                    placeholder="meumelhoremail@mail.com">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-magentela text-start">
+                <h3>Conteúdo do projeto</h3>
+                <hr class="w-100 m-0">
+            </div>
+            <div class="col-md-12 mt-5 d-flex flex-column align-items-start gap-2">
+                <label class="fs-5 text-start">Insira aqui informações relevantes do projeto, como: Efeitos especiais ou
+                    animações
+                    desejados, referências de vídeos semelhantes ao que você deseja e/ou qualquer outra informação que
+                    queria compartilhar</label>
+                <textarea [(ngModel)]="description" type="text" class="form-control bg-transparent p-2 text-white" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button (click)="sendForm()" class="btn btn-magentela text-white border-0 ps-5 pe-5 pt-4 pb-4 fs-3 btn-hover">
+                ENVIAR PROPOSTA
+            </button>
         </div>
     </div>
 </section>

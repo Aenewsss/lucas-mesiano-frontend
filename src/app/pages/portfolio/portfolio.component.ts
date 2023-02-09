@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ICurrentVideoMobile, IHorizontais, IVerticais } from './types';
+import { DescriptionEnum } from './description.enum';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,20 +15,24 @@ export class PortfolioComponent implements OnInit {
 
   verticais: IVerticais[] = [
     {
+      title: "Como é uma aula de Krav Maga",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/como-aula-krav-maga.mp4",
+      description: DescriptionEnum.kravMaga
+    },
+    {
       title: "Lançamento | Curso Polícia Militar",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/concurso-policia.mp4"
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/concurso-policia.mp4",
+      description:  DescriptionEnum.policia
     },
     {
-      title: "Como é a aula de krav maga",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/como-aula-krav-maga.mp4"
+      title: "Investimentos do Agronegócio",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/investimentos-agro-reels.mp4",
+      description: DescriptionEnum.agro
     },
     {
-      title: "Investimentos no agronegócio",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/investimentos-agro-reels.mp4"
-    },
-    {
-      title: "Versão vertical",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/versao-vertical.mp4"
+      title: "Clínica de Psicologia",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/versao-vertical.mp4",
+      description: DescriptionEnum.clinica
     },
   ]
 
@@ -49,6 +54,7 @@ export class PortfolioComponent implements OnInit {
   currentVideoMobile: ICurrentVideoMobile = {
     title: this.verticais[0].title,
     url: this.verticais[0].url,
+    description: this.verticais[0].description,
     index: 0
   }
 
@@ -67,11 +73,13 @@ export class PortfolioComponent implements OnInit {
       this.currentVideoMobile.index = length;
       this.currentVideoMobile.title = this.verticais[length].title;
       this.currentVideoMobile.url = this.verticais[length].url;
+      this.currentVideoMobile.description = this.verticais[length].description;
     } else {
       const newIndex = this.currentVideoMobile.index - 1;
       this.currentVideoMobile.index = newIndex;
       this.currentVideoMobile.title = this.verticais[newIndex].title;
       this.currentVideoMobile.url = this.verticais[newIndex].url;
+      this.currentVideoMobile.description = this.verticais[newIndex].description;
     }
 
     this.videoMobile.nativeElement.pause();
@@ -89,17 +97,21 @@ export class PortfolioComponent implements OnInit {
       this.currentIcon = this.videoPlayed;
     }
   }
-  
+
   nextVideo() {
     if ((this.currentVideoMobile.index + 1) > this.verticais.length - 1) {
       this.currentVideoMobile.index = 0;
       this.currentVideoMobile.title = this.verticais[0].title;
       this.currentVideoMobile.url = this.verticais[0].url;
+      this.currentVideoMobile.description = this.verticais[0].description;
+      
     } else {
       const newIndex = this.currentVideoMobile.index + 1;
       this.currentVideoMobile.index = newIndex;
       this.currentVideoMobile.title = this.verticais[newIndex].title;
       this.currentVideoMobile.url = this.verticais[newIndex].url;
+      this.currentVideoMobile.description = this.verticais[newIndex].description;
+      
     }
     this.videoMobile.nativeElement.pause();
     this.currentIcon = this.videoPlayed;

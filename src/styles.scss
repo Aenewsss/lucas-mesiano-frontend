@@ -11,7 +11,8 @@
 }
 
 :root {
-    --magentela: #D91D5A
+    --magentela: #D91D5A;
+    --other-black: #171717
 }
 
 ::-webkit-scrollbar {
@@ -467,4 +468,20 @@ h2::after {
     100% {
         transform: translateX(-100%);
     }
+}
+
+.info-text{
+    z-index: 4;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+input:focus, textarea:focus{
+    box-shadow: 0 0 4px 0 var(--magentela) !important;
+    border: 1px solid var(--magentela) !important;
+}
+
+.bg-other-black{
+    background-color: var(--other-black);
 }
