@@ -1,16 +1,30 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-::-webkit-scrollbar{
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap') format('woff');
+}
+
+@font-face {
+    font-family: 'GothamBlack';
+    src: url("./assets/fonts/gotham-black.ttf");
+}
+
+:root {
+    --magentela: #D91D5A;
+    --other-black: #171717
+}
+
+::-webkit-scrollbar {
     height: 10px;
     width: 8px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: #303030;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background-color: #D91D5A;
 }
@@ -21,40 +35,43 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #303030;
+    background-color: #000000;
 }
 
-a{
+a {
     text-decoration: none;
     color: unset;
 
-    &:hover{
-        color: unset;    
+    &:hover {
+        color: unset;
     }
 }
-.mh-500{
-    max-height: 500px !important;
+
+.mh-600 {
+    max-height: 600px !important;
 }
 
-h1{
+h1 {
     transition: .4s ease-in-out;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #D91D5A !important;
         transform: scale(1.01);
     }
 }
 
-h2{
+h2 {
     transition: .4s ease-in-out;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         color: #D91D5A;
         transform: scale(1.05);
     }
 }
 
-h2::before{
+h2::before {
     content: '';
     position: absolute;
     width: 10px;
@@ -65,7 +82,7 @@ h2::before{
     transform: translateX(-50%);
 }
 
-h2::after{
+h2::after {
     content: '';
     position: absolute;
     width: 100px;
@@ -76,16 +93,395 @@ h2::after{
     transform: translateX(-50%);
 }
 
-.card{
+.card {
     cursor: pointer;
-}
-
-.card:hover{
-    transform: scale(1.07);
     transition: .4s ease-in-out;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
 
-.text-magentela{
+
+.text-magentela {
     color: #D91D5A !important;
+}
+
+.w-50p {
+    width: 60px;
+}
+
+.hover {
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.hover:hover {
+    transform: scale(1.05);
+}
+
+.text-border {
+    color: transparent !important;
+    -webkit-text-stroke: 1px white;
+}
+
+.text-mesiano {
+    font-size: 8rem;
+}
+
+.fs-6rem {
+    font-size: 6rem;
+}
+
+.fill-white:hover {
+    color: white !important;
+}
+
+.shadow-magentela {
+    text-shadow: 4px 4px 10px var(--magentela);
+}
+
+.shadow-white {
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.img-mesi {
+    --angle: 0deg;
+    border-bottom: 1px solid var(--magentela);
+    // border-image: linear-gradient(var(--angle), var(--magentela), black) 1;
+    animation: 5s floating ease-in-out infinite;
+    transform: translate(0, 0);
+}
+
+@keyframes mesi-img {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.ff-gotham {
+    font-family: 'GothamBlack';
+}
+
+.img-feeedback {
+    max-width: 80px;
+    border-radius: 50%;
+}
+
+
+.btn-magentela {
+    background-color: #D91D5A;
+    box-shadow: 0px 0px 50px -10px var(--magentela);
+
+    &:hover {
+        background-color: #d91d59cf;
+    }
+}
+
+.bg-black {
+    background-color: #303030;
+}
+
+.bg-gray {
+    background-color: #242424;
+}
+
+.portfolio .card:hover {
+    box-shadow: none;
+}
+
+.portfolio .card:hover .card-text {
+    opacity: 1;
+}
+
+.portfolio .card-text {
+    background: linear-gradient(rgba(10, 10, 10, 0.3) 0%, #d91d59d1 100%);
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+.card-text>p {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+.card-text:hover>p {
+    top: 60%;
+    opacity: 1;
+}
+
+.card-text>p:hover {
+    color: antiquewhite;
+}
+
+
+
+.h-300 {
+    height: 300px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.ps-100 {
+    padding-left: 100px;
+}
+
+.pe-100 {
+    padding-right: 100px;
+}
+
+.btn-hover {
+    transition: .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    transform: scale(1.05);
+}
+
+.subtitle {
+    transition: .4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        color: #D91D5A !important;
+        transform: scale(1.3);
+    }
+}
+
+.mh-400 {
+    max-height: 400px !important;
+}
+
+.slidein {
+    float: right;
+
+    animation-duration: .8s;
+    animation-name: slidein;
+}
+
+.border-magentela {
+    border-color: rgba(217, 29, 89, 0.486) !important;
+}
+
+.box-shadow {
+    box-shadow: 3px 3px 4px 0 rgba(255, 255, 255, 0.4),
+        -3px -3px 4px 0 rgba(255, 255, 255, 0.4);
+}
+
+.border-magentela-shadow {
+    border-color: #D91D5A;
+    box-shadow: 0 0 10px #D91D5A;
+}
+
+@mixin magic-border($width, $color, $duration, $direction) {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width:calc(100% + #{$width * 2});
+        height:calc(100% + #{$width * 2});
+        top:calc(#{$width}/-1);
+        left:calc(#{$width}/-1);
+        box-shadow: 0 4px 4px #D91D5A;
+        background: linear-gradient(to right, $color 0%, $color 100%),
+            linear-gradient(to top, $color 50%, transparent 50%),
+            linear-gradient(to top, $color 50%, transparent 50%),
+            linear-gradient(to right, $color 0%, $color 100%),
+            linear-gradient(to left, $color 0%, $color 100%);
+        background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+        background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+        background-repeat: no-repeat, no-repeat;
+        transition: transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
+        transform: scaleX(0) rotate(180deg * $direction);
+        transition-delay: $duration*2, $duration, 0s;
+    }
+
+    &:hover {
+        &:before {
+            background-size: 200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+            background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+            transform: scaleX(1) rotate(180deg * $direction);
+            transition-delay: 0s, $duration, $duration*2;
+        }
+    }
+}
+
+.border-gradient {
+    @include magic-border(2px, #D91D5A, 0.3s, 0);
+}
+
+
+
+@keyframes slidein {
+    from {
+        margin-right: -70%;
+    }
+
+    to {
+        margin-right: 0%;
+    }
+}
+
+
+@media (max-width:760px) {
+    .subtitle {
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .about-me {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .pt-30 {
+        padding-top: 0 !important;
+    }
+
+    .pb-30 {
+        padding-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        height: 400px;
+    }
+}
+
+.text-white-opacity {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.bg-white-opacity {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.mh-660 {
+    max-height: 660px;
+}
+
+.iphone-image {
+    left: 0;
+    z-index: 2;
+}
+
+.iphone-video {
+    left: 5px;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.w-360 {
+    width: 360px;
+}
+
+.h-660 {
+    height: 660px;
+}
+
+.ov-hidden {
+    overflow: hidden;
+}
+
+.camera-iphone {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40px;
+    z-index: 3;
+}
+
+.logo-mesi-form {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-video-desktop {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.insta-fix {
+    top: 20px;
+    right: 30px;
+}
+
+.top{
+    background: radial-gradient( #212121 0%, #000000 90%);
+}
+
+.about-vertical{
+    border-top: 2px solid var(--magentela) ;
+    border-left: 2px solid var(--magentela) 
+}
+.about-horizontal{
+    border-bottom: 2px solid var(--magentela) ;
+    border-right: 2px solid var(--magentela) ;
+}
+
+.names{
+    animation: names 30s linear infinite;
+}
+
+@keyframes names {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.info-text{
+    z-index: 4;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+input:focus, textarea:focus{
+    box-shadow: 0 0 4px 0 var(--magentela) !important;
+    border: 1px solid var(--magentela) !important;
+}
+
+.bg-other-black{
+    background-color: var(--other-black);
 }
