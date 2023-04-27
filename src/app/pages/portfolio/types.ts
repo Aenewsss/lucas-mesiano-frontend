@@ -3,7 +3,7 @@ import { DescriptionEnum } from "./description.enum"
 export interface IVerticais {
     title: string,
     url: string,
-    description: DescriptionEnum
+    description?: DescriptionEnum
 }
 
 export interface IHorizontais {
@@ -17,5 +17,5 @@ export interface ICurrentVideoMobile {
     title: string,
     url: string,
     index: number,
-    description: DescriptionEnum
+    description?: DescriptionEnum
 }

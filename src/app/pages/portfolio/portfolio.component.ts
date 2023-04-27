@@ -20,11 +20,6 @@ export class PortfolioComponent implements OnInit {
       description: DescriptionEnum.kravMaga
     },
     {
-      title: "Lançamento | Curso Polícia Militar",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/concurso-policia.mp4",
-      description:  DescriptionEnum.policia
-    },
-    {
       title: "Investimentos do Agronegócio",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/investimentos-agro-reels.mp4",
       description: DescriptionEnum.agro
@@ -34,20 +29,34 @@ export class PortfolioComponent implements OnInit {
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/versao-vertical.mp4",
       description: DescriptionEnum.clinica
     },
-  ]
-
-  horizontais: IHorizontais[] = [
     {
-      titleBorder: "Consultoria",
-      title: "Rafael Ferreira",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/RafaelFerreiraConsultoria.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/consultoria-rf.png"
+      title: "Como usar o ChatGPT",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/chatGPT.mp4",
     },
     {
-      titleBorder: "Super",
-      title: "Time",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/SuperTime.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/super-time.png"
+      title: "Corte Podcast",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/corte-podcast.mp4",
+     
+    },
+    {
+      title: "Podcast Investimentos",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/dolar.mp4",
+     
+    },
+    {
+      title: "Seu filho sofre bullying?",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/filho-bullying.mp4",
+     
+    },
+    {
+      title: "Publi Petrobras",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/petrobras.mp4",
+     
+    },
+    {
+      title: "Vc já sofreu uma queda?",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/queda-rolamento-krav-maga.mp4",
+     
     },
   ]
 

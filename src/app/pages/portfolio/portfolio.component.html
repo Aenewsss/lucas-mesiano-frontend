@@ -7,7 +7,7 @@
             <hr class="w-100 m-0">
         </div>
 
-        <div class="col-md-6 d-flex justify-content-start">
+        <div class="col-md-6 d-flex justify-content-md-start justify-content-center">
             <div class="w-360 position-relative h-660">
                 <img class="mh-660 position-absolute iphone-image" src="../../../assets/iphone-no-camera.svg"
                     alt="iphone-no-camera.svg">
@@ -17,8 +17,8 @@
                 <p [ngClass]="{'d-none': currentIcon !== videoPlayed}" class="fs-5 text-magentela fw-bold position-absolute info-text">Aperte o play para começar!</p>
             </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-start mt-5">
-            <div class="d-flex flex-column gap-3 me-3">
+        <div class="col-md-6 d-flex justify-content-md-start justify-content-center align-items-center mt-5">
+            <div class="d-flex flex-column gap-3 me-md-3">
                 <h3 class="w-100 fs-2">{{currentVideoMobile.title}}</h3>
                 <div class="w-100 d-flex justify-content-around">
                     <button (click)="prevVideo()" class="btn btn-default border-0">
@@ -31,30 +31,10 @@
                         <img width="60" src="../../../assets/icons/next.svg" alt="next.svg">
                     </button>
                 </div>
-                <p class="text-center mt-5 fs-5">{{currentVideoMobile.description}}</p>
+                <!-- <p class="text-center mt-5 fs-5">{{currentVideoMobile.description}}</p> -->
             </div>
         </div>
 
-    </div>
-
-    <div class="row d-flex justify-content-center mt-3 slide-right pb-5">
-        <div class="d-flex flex-column align-items-start text-magentela pb-5 mb-5">
-            <h3>Horizontais</h3>
-            <hr class="w-100 m-0">
-        </div>
-
-        <div class="col-md-12 mt-5 d-flex align-items-center justify-content-center"
-            *ngFor="let video of horizontais; let index = index">
-            <div class="card border-0 bg-transparent position-relative">
-                <video (click)="playOrPauseVideoDesktop(index)" id=videoDesktop{{index}} class="img-fluid mh-600"
-                    poster={{video.thumb}} src={{video.url}}></video>
-                <span [ngClass]="{'d-none': !videoHorizontalPaused}" (click)="playOrPauseVideoDesktop(index)"
-                    class="w-100 display-3 position-absolute text-uppercase fs-6rem fw-bold title-video-desktop">
-                    <span class="text-border">{{video.titleBorder}}</span>
-                    {{video.title}}
-                </span>
-            </div>
-        </div>
     </div>
 
 
