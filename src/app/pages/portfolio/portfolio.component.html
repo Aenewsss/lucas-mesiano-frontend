@@ -2,17 +2,12 @@
     <h1 class="display-1 text-border fill-white fs-6rem mt-5" id="portfolio">Portfolio</h1>
 
     <div class="row d-flex justify-content-center mt-3 slide-right">
-        <div class="d-flex flex-column align-items-start text-magentela pt-5 mb-5 pb-5">
-            <h3>Verticais</h3>
-            <hr class="w-100 m-0">
-        </div>
-
         <div class="col-md-6 d-flex justify-content-md-start justify-content-center">
             <div class="w-360 position-relative h-660">
-                <img class="mh-660 position-absolute iphone-image" src="../../../assets/iphone-no-camera.svg"
+                <!-- <img class="mh-660 position-absolute iphone-image" src="../../../assets/iphone-no-camera.svg"
                     alt="iphone-no-camera.svg">
-                <img class="position-absolute camera-iphone" src="../../../assets/camera-iphone.svg" alt="">
-                <video #videoMobile class="w-100 mh-660 position-absolute iphone-video"
+                <img class="position-absolute camera-iphone" src="../../../assets/camera-iphone.svg" alt=""> -->
+                <video #videoMobile class="w-100 mh-660"
                     src={{currentVideoMobile.url}}></video>
                 <p [ngClass]="{'d-none': currentIcon !== videoPlayed}" class="fs-5 text-magentela fw-bold position-absolute info-text">Aperte o play para começar!</p>
             </div>
