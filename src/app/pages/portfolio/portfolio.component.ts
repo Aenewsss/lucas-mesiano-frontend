@@ -20,9 +20,14 @@ export class PortfolioComponent implements OnInit {
       description: DescriptionEnum.kravMaga
     },
     {
-      title: "Investimentos do Agronegócio",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/investimentos-agro-reels.mp4",
-      description: DescriptionEnum.agro
+      title: "Publi Petrobras",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/petrobras.mp4",
+     
+    },
+    {
+      title: "Reels Simpsons",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/Simpsons+Palestra+Reels+Finalizado.mp4",
+     
     },
     {
       title: "Clínica de Psicologia",
@@ -30,8 +35,18 @@ export class PortfolioComponent implements OnInit {
       description: DescriptionEnum.clinica
     },
     {
+      title: "Seu filho sofre bullying?",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/filho-bullying.mp4",
+     
+    },
+    {
       title: "Como usar o ChatGPT",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/chatGPT.mp4",
+    },
+    {
+      title: "Vc já sofreu uma queda?",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/queda-rolamento-krav-maga.mp4",
+     
     },
     {
       title: "Corte Podcast",
@@ -43,21 +58,7 @@ export class PortfolioComponent implements OnInit {
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/dolar.mp4",
      
     },
-    {
-      title: "Seu filho sofre bullying?",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/filho-bullying.mp4",
-     
-    },
-    {
-      title: "Publi Petrobras",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/petrobras.mp4",
-     
-    },
-    {
-      title: "Vc já sofreu uma queda?",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/queda-rolamento-krav-maga.mp4",
-     
-    },
+    
   ]
 
   currentVideoMobile: ICurrentVideoMobile = {
