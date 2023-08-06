@@ -237,6 +237,10 @@ h2::after {
     color: antiquewhite;
 }
 
+.img-reason {
+    filter: drop-shadow(0 0 10px #D91D5A);
+    max-width: 200px;
+}
 
 
 .h-300 {
@@ -455,7 +459,7 @@ h2::after {
 
 .about-vertical{
     border: 3px solid var(--magentela) ;
-    
+
 }
 .about-horizontal{
     border-bottom: 2px solid var(--magentela) ;
