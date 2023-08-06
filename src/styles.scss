@@ -147,7 +147,7 @@ h2::after {
 
 .img-mesi {
     --angle: 0deg;
-    border-bottom: 1px solid var(--magentela);
+    // border-bottom: 1px solid var(--magentela);
     // border-image: linear-gradient(var(--angle), var(--magentela), black) 1;
     animation: 5s floating ease-in-out infinite;
     transform: translate(0, 0);
@@ -454,8 +454,8 @@ h2::after {
 }
 
 .about-vertical{
-    border-top: 2px solid var(--magentela) ;
-    border-left: 2px solid var(--magentela) 
+    border: 3px solid var(--magentela) ;
+    
 }
 .about-horizontal{
     border-bottom: 2px solid var(--magentela) ;
