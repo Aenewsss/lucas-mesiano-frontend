@@ -5,7 +5,8 @@ export interface IVerticais {
     url: string,
     description?: DescriptionEnum,
     thumb?: string,
-    id: string
+    id: string,
+    controlsId: string
 }
 
 export interface IHorizontais {

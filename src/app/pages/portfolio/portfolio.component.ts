@@ -19,35 +19,41 @@ export class PortfolioComponent implements OnInit {
     {
       id: "video1",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Agrobras%C3%ADlia+-+L%C3%A9o+Mendes.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Agroneg%C3%B3cio+-+Leo+Mendes.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Agroneg%C3%B3cio+-+Leo+Mendes.png",
+      controlsId: "1"
     },
     {
       id: "video2",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Arquiteta+-+Fl%C3%A1via+Cristina.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Arquiteta+-+Fl%C3%A1via+Cristina.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Arquiteta+-+Fl%C3%A1via+Cristina.png",
+      controlsId: "2"
 
     },
     {
       id: "video3",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Dicas+para+deixar+o+quarto+mais+aconchegante.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Dicas+Arq+-+Fl%C3%A1via+Cristina.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Dicas+Arq+-+Fl%C3%A1via+Cristina.png",
+      controlsId: "3"
 
     },
     {
       id: "video4",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/Depois+que+voce%CC%82+agendar+a+sua+aula+Finalizado.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Krav+Maga+-+Rodrigo+Neri.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Krav+Maga+-+Rodrigo+Neri.png",
+      controlsId: "4"
     },
     {
       id: "video5",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Lan%C3%A7amento+de+curso+-+Mariana+Del+Monte.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Psicologia+-+Mariana+Del+Monte.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Psicologia+-+Mariana+Del+Monte.png",
+      controlsId: "5"
 
     },
     {
       id: "video6",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Publi+-+Petrobras.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Publi+petrobras.png"
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Publi+petrobras.png",
+      controlsId: "6"
     },
   ]
 
@@ -72,26 +78,40 @@ export class PortfolioComponent implements OnInit {
     this.checkCardActive()
   }
 
-  playOrPauseVideo() {
-    const video = this.videoMobile.nativeElement as HTMLVideoElement
+  playOrPauseVideo(videoId: string) {
+    const video = document.getElementById(videoId) as any
+
+    const controlsIdNumber = videoId[videoId.length - 1]
+
+    const playIcon = document.getElementById(`play${controlsIdNumber}`)!
+    const pauseIcon = document.getElementById(`pause${controlsIdNumber}`)!
+    console.log(video.paused)
     if (video.paused) {
-      this.videoMobile.nativeElement.play();
-      this.currentIcon = this.videoPaused;
+      pauseIcon.style.opacity = "1"
+      playIcon.style.opacity = "0"
+      video.play()
+    } else {
+      pauseIcon.style.opacity = "0"
+      playIcon.style.opacity = "1"
+      video.pause()
     }
-    else {
-      this.videoMobile.nativeElement.pause();
-      this.currentIcon = this.videoPlayed;
-    }
+
   }
 
-  checkCardActive(){
-    const event = {target: { id: "video3"}}
+  checkCardActive() {
+    const event = { target: { id: "video3" } }
     // this.videoClicked(event)
   }
 
   videoClicked(event: any) {
     const elementId = event.target.id;
 
+    this.translateVideo(elementId)
+
+    this.playOrPauseVideo(elementId)
+  }
+
+  translateVideo(elementId: string) {
     const portfolioCards = document.querySelectorAll<HTMLElement>(".card-portfolio")
     const currentCard = Object.values(portfolioCards).filter(el => el.children[0].id == elementId)[0]
 
@@ -111,16 +131,35 @@ export class PortfolioComponent implements OnInit {
     })
   }
 
-  hoverVideo(event:any){
-    let video = document.getElementById(event.target.id)!
+  hoverVideo(event: any) {
+    let video = document.getElementById(event.target.id)! as any
 
-    if(video.hasAttribute("controls")) video.removeAttribute("controls")
-    else video.setAttribute("controls", "controls")
+    const controlsIdNumber = event.target.id[event.target.id.length - 1]
+
+    const playIcon = document.getElementById(`play${controlsIdNumber}`)!
+
+
+    if (video.paused) {
+      playIcon.style.opacity = "1"
+    }
+
   }
 
-  outVideo(event: any){
-    let video = document.getElementById(event.target.id)!
-    if(video.hasAttribute("controls")) video.removeAttribute("controls")
+  outVideo(event: any) {
+    let video = document.getElementById(event.target.id)! as any
+    video.pause()
+
+    const controlsIdNumber = event.target.id[event.target.id.length - 1]
+    const playIcon = document.getElementById(`play${controlsIdNumber}`)!
+    const pauseIcon = document.getElementById(`pause${controlsIdNumber}`)!
+
+    playIcon.style.opacity = "0"
+    pauseIcon.style.opacity = "0"
+    console.log(this.verticais.filter(el => el.id === event.target.id))
+    console.log(event.target.id)
+
+    video.currentTime = 0
+    video.poster = this.verticais.filter(el => el.id === event.target.id)[0].thumb
   }
 
 }

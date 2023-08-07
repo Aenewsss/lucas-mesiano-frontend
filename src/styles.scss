@@ -233,13 +233,16 @@ h2::after {
     opacity: 1;
 }
 
-.player-control {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.pause, .play {
+    left: 0;
     opacity: 0;
+}
+
+
+.player-control {
+    bottom: 0;
     transition: .6s ease-in;
-    z-index: -1;
+    width: 50px;
 }
 
 .card-portfolio {

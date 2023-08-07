@@ -6,8 +6,8 @@
       class="position-relative card-portfolio border border-magentela border-magentela-shadow rounded"
       ngClass="{{vertical.id == 'video3' ? 'card-active' : ''}}">
       <video (mouseout)="outVideo($event)" (mouseover)="hoverVideo($event)" poster="{{vertical.thumb}}" class="rounded" id="{{vertical.id}}" src="{{vertical.url}}" ></video>
-      <img class="player-control play position-absolute" src="../../../assets/icons/play.svg" alt="play icon">
-      <img class="player-control pause position-absolute" src="../../../assets/icons/pause.svg" alt="pause icon">
+      <img id="play{{vertical.controlsId}}" class="player-control play position-absolute" src="../../../assets/icons/play.svg" alt="play icon">
+      <img id="pause{{vertical.controlsId}}" class="player-control pause position-absolute" src="../../../assets/icons/pause.svg" alt="pause icon">
     </div>
   </div>
 
