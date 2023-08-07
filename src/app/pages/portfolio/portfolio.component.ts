@@ -158,8 +158,8 @@ export class PortfolioComponent implements OnInit {
     console.log(this.verticais.filter(el => el.id === event.target.id))
     console.log(event.target.id)
 
-    video.currentTime = 0
-    video.poster = this.verticais.filter(el => el.id === event.target.id)[0].thumb
+    video.src="asdas"
+    video.src = this.verticais.filter(el => el.id === event.target.id)[0].url
   }
 
 }

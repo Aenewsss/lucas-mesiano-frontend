@@ -1,11 +1,12 @@
 <section class=" portfolio text-center text-white mb-5 pb-5">
   <h1 class="container display-1 text-white mt-5" id="portfolio">portfolio</h1>
 
-  <div class="portfolio d-flex ov-hidden gap-5 justify-content-center mt-5">
+  <div class="portfolio d-flex ov-hidden gap-md-5 gap-2 justify-content-center mt-5">
     <div *ngFor="let vertical of verticais" (click)="videoClicked($event)"
       class="position-relative card-portfolio border border-magentela border-magentela-shadow rounded"
       ngClass="{{vertical.id == 'video3' ? 'card-active' : ''}}">
-      <video (mouseout)="outVideo($event)" (mouseover)="hoverVideo($event)" poster="{{vertical.thumb}}" class="rounded" id="{{vertical.id}}" src="{{vertical.url}}" ></video>
+      <video (mouseout)="outVideo($event)" (mouseover)="hoverVideo($event)" poster="{{vertical.thumb}}" class="rounded" id="{{vertical.id}}" src="{{vertical.url}}" >
+      </video>
       <img id="play{{vertical.controlsId}}" class="player-control play position-absolute" src="../../../assets/icons/play.svg" alt="play icon">
       <img id="pause{{vertical.controlsId}}" class="player-control pause position-absolute" src="../../../assets/icons/pause.svg" alt="pause icon">
     </div>
