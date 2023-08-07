@@ -11,54 +11,44 @@ export class PortfolioComponent implements OnInit {
 
   @ViewChild('videoMobile') videoMobile: any;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   verticais: IVerticais[] = [
     {
-      title: "Como é uma aula de Krav Maga",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/como-aula-krav-maga.mp4",
-      description: DescriptionEnum.kravMaga
+      id: "video1",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Agrobras%C3%ADlia+-+L%C3%A9o+Mendes.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Agroneg%C3%B3cio+-+Leo+Mendes.png"
     },
     {
-      title: "Publi Petrobras",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/petrobras.mp4",
-     
+      id: "video2",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Arquiteta+-+Fl%C3%A1via+Cristina.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Arquiteta+-+Fl%C3%A1via+Cristina.png"
+
     },
     {
-      title: "Reels Simpsons",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/Simpsons+Palestra+Reels+Finalizado.mp4",
-     
+      id: "video3",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Dicas+para+deixar+o+quarto+mais+aconchegante.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Dicas+Arq+-+Fl%C3%A1via+Cristina.png"
+
     },
     {
-      title: "Clínica de Psicologia",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/versao-vertical.mp4",
-      description: DescriptionEnum.clinica
+      id: "video4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/Depois+que+voce%CC%82+agendar+a+sua+aula+Finalizado.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Krav+Maga+-+Rodrigo+Neri.png"
     },
     {
-      title: "Seu filho sofre bullying?",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/filho-bullying.mp4",
-     
+      id: "video5",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Lan%C3%A7amento+de+curso+-+Mariana+Del+Monte.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Psicologia+-+Mariana+Del+Monte.png"
+
     },
     {
-      title: "Como usar o ChatGPT",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/chatGPT.mp4",
+      id: "video6",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Publi+-+Petrobras.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Publi+petrobras.png"
     },
-    {
-      title: "Vc já sofreu uma queda?",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/queda-rolamento-krav-maga.mp4",
-     
-    },
-    {
-      title: "Corte Podcast",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/corte-podcast.mp4",
-     
-    },
-    {
-      title: "Podcast Investimentos",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/verticais/dolar.mp4",
-     
-    },
-    
   ]
 
   currentVideoMobile: ICurrentVideoMobile = {
@@ -74,26 +64,12 @@ export class PortfolioComponent implements OnInit {
   videoHorizontalPaused: boolean = true;
 
   currentIcon: string = this.videoPlayed;
+
+  initialTranslate: number = 400;
+  screenCenter: number = window.innerWidth / 2;
+
   ngOnInit(): void {
-  }
-
-  prevVideo() {
-    if ((this.currentVideoMobile.index - 1) < 0) {
-      const length = this.verticais.length - 1
-      this.currentVideoMobile.index = length;
-      this.currentVideoMobile.title = this.verticais[length].title;
-      this.currentVideoMobile.url = this.verticais[length].url;
-      this.currentVideoMobile.description = this.verticais[length].description;
-    } else {
-      const newIndex = this.currentVideoMobile.index - 1;
-      this.currentVideoMobile.index = newIndex;
-      this.currentVideoMobile.title = this.verticais[newIndex].title;
-      this.currentVideoMobile.url = this.verticais[newIndex].url;
-      this.currentVideoMobile.description = this.verticais[newIndex].description;
-    }
-
-    this.videoMobile.nativeElement.pause();
-    this.currentIcon = this.videoPlayed;
+    this.checkCardActive()
   }
 
   playOrPauseVideo() {
@@ -108,37 +84,43 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-  nextVideo() {
-    if ((this.currentVideoMobile.index + 1) > this.verticais.length - 1) {
-      this.currentVideoMobile.index = 0;
-      this.currentVideoMobile.title = this.verticais[0].title;
-      this.currentVideoMobile.url = this.verticais[0].url;
-      this.currentVideoMobile.description = this.verticais[0].description;
-      
-    } else {
-      const newIndex = this.currentVideoMobile.index + 1;
-      this.currentVideoMobile.index = newIndex;
-      this.currentVideoMobile.title = this.verticais[newIndex].title;
-      this.currentVideoMobile.url = this.verticais[newIndex].url;
-      this.currentVideoMobile.description = this.verticais[newIndex].description;
-      
-    }
-    this.videoMobile.nativeElement.pause();
-    this.currentIcon = this.videoPlayed;
+  checkCardActive(){
+    const event = {target: { id: "video3"}}
+    // this.videoClicked(event)
   }
 
-  playOrPauseVideoDesktop(index: number) {
-    const video = document.getElementById(`videoDesktop${index}`) as HTMLVideoElement;
-    if (video.paused) {
-      video.play();
-      this.videoHorizontalPaused = false;
-    }
-    else {
-      video.pause();
-      this.videoHorizontalPaused = true;
-    }
+  videoClicked(event: any) {
+    const elementId = event.target.id;
+
+    const portfolioCards = document.querySelectorAll<HTMLElement>(".card-portfolio")
+    const currentCard = Object.values(portfolioCards).filter(el => el.children[0].id == elementId)[0]
+
+    const centerDistance = this.screenCenter - currentCard.getBoundingClientRect().x
+    const elementWidth = 153
+    const centerPosition = centerDistance - elementWidth;
+
+    const lastCardActive = document.querySelector(".card-active")!
+    lastCardActive.classList.remove("card-active")
+
+    currentCard.classList.add("card-active")
+
+    portfolioCards.forEach(el => {
+      const currentTransformX = new WebKitCSSMatrix(getComputedStyle(el).transform).m41;
+      if (el != currentCard) el.style.transform = `translateX(${currentTransformX + centerPosition}px) scale(0.9)`
+      else el.style.transform = `translateX(${currentTransformX + centerPosition}px)`
+    })
   }
 
+  hoverVideo(event:any){
+    let video = document.getElementById(event.target.id)!
 
+    if(video.hasAttribute("controls")) video.removeAttribute("controls")
+    else video.setAttribute("controls", "controls")
+  }
+
+  outVideo(event: any){
+    let video = document.getElementById(event.target.id)!
+    if(video.hasAttribute("controls")) video.removeAttribute("controls")
+  }
 
 }

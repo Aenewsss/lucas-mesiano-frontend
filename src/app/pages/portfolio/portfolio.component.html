@@ -1,42 +1,20 @@
-<section class="container portfolio text-center text-white mb-5 pb-5">
-    <h1 class="display-1 text-white mt-5" id="portfolio">portfolio</h1>
+<section class=" portfolio text-center text-white mb-5 pb-5">
+  <h1 class="container display-1 text-white mt-5" id="portfolio">portfolio</h1>
 
-    <div class="row d-flex justify-content-center mt-3 slide-right">
-        <div class="col-md-6 d-flex justify-content-md-start justify-content-center">
-            <div class="w-360 position-relative h-660">
-                <!-- <img class="mh-660 position-absolute iphone-image" src="../../../assets/iphone-no-camera.svg"
-                    alt="iphone-no-camera.svg">
-                <img class="position-absolute camera-iphone" src="../../../assets/camera-iphone.svg" alt=""> -->
-                <video #videoMobile class="w-100 mh-660"
-                    src={{currentVideoMobile.url}}></video>
-                <p [ngClass]="{'d-none': currentIcon !== videoPlayed}" class="fs-5 text-magentela fw-bold position-absolute info-text">Aperte o play para começar!</p>
-            </div>
-        </div>
-        <div class="col-md-6 d-flex justify-content-md-start justify-content-center align-items-center mt-5">
-            <div class="d-flex flex-column gap-3 me-md-3">
-                <h3 class="w-100 fs-2">{{currentVideoMobile.title}}</h3>
-                <div class="w-100 d-flex justify-content-around">
-                    <button (click)="prevVideo()" class="btn btn-default border-0">
-                        <img width="60" src="../../../assets/icons/back.svg" alt="back.svg">
-                    </button>
-                    <button (click)="playOrPauseVideo()" class="btn btn-default border-0">
-                        <img width="60" src={{currentIcon}} alt="pause.svg">
-                    </button>
-                    <button (click)="nextVideo()" class="btn btn-default border-0">
-                        <img width="60" src="../../../assets/icons/next.svg" alt="next.svg">
-                    </button>
-                </div>
-                <!-- <p class="text-center mt-5 fs-5">{{currentVideoMobile.description}}</p> -->
-            </div>
-        </div>
-
+  <div class="portfolio d-flex ov-hidden gap-5 justify-content-center mt-5">
+    <div *ngFor="let vertical of verticais" (click)="videoClicked($event)"
+      class="position-relative card-portfolio border border-magentela border-magentela-shadow rounded"
+      ngClass="{{vertical.id == 'video3' ? 'card-active' : ''}}">
+      <video (mouseout)="outVideo($event)" (mouseover)="hoverVideo($event)" poster="{{vertical.thumb}}" class="rounded" id="{{vertical.id}}" src="{{vertical.url}}" ></video>
+      <img class="player-control play position-absolute" src="../../../assets/icons/play.svg" alt="play icon">
+      <img class="player-control pause position-absolute" src="../../../assets/icons/pause.svg" alt="pause icon">
     </div>
+  </div>
 
-
-    <div class="d-flex justify-content-center mt-5 pt-5">
-        <a class="btn btn-magentela  text-white border-0 ps-5 pe-5 pt-4 pb-4 fs-3 btn-hover" target="_blank"
-            href="https://api.whatsapp.com/send?phone=5561981923272&text=Ol%C3%A1,%20gostaria%20de%20conhecer%20melhor%20os%20seus%20servi%C3%A7os!">
-            Solicite seu orçamento
-        </a>
-    </div>
+  <div class="container d-flex justify-content-center mt-5 pt-5">
+    <a class="btn btn-magentela  text-white border-0 ps-5 pe-5 pt-4 pb-4 fs-3 btn-hover" target="_blank"
+      href="https://api.whatsapp.com/send?phone=5561981923272&text=Ol%C3%A1,%20gostaria%20de%20conhecer%20melhor%20os%20seus%20servi%C3%A7os!">
+      Solicite seu orçamento
+    </a>
+  </div>
 </section>

@@ -233,6 +233,29 @@ h2::after {
     opacity: 1;
 }
 
+.player-control {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: .6s ease-in;
+    z-index: -1;
+}
+
+.card-portfolio {
+    cursor: pointer;
+    transition: .6s ease-in;
+
+    video {
+        max-width: 300px;
+    }
+
+    &:not(.card-active){
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+}
+
 .card-text>p:hover {
     color: antiquewhite;
 }
@@ -270,6 +293,8 @@ h2::after {
 .btn-hover:hover {
     transform: scale(1.05);
 }
+
+    
 
 .subtitle {
     transition: .4s ease-in-out;
@@ -453,20 +478,21 @@ h2::after {
     z-index: 10;
 }
 
-.top{
-    background: radial-gradient( #212121 0%, #000000 90%);
+.top {
+    background: radial-gradient(#212121 0%, #000000 90%);
 }
 
-.about-vertical{
-    border: 3px solid var(--magentela) ;
+.about-vertical {
+    border: 3px solid var(--magentela);
 
 }
-.about-horizontal{
-    border-bottom: 2px solid var(--magentela) ;
-    border-right: 2px solid var(--magentela) ;
+
+.about-horizontal {
+    border-bottom: 2px solid var(--magentela);
+    border-right: 2px solid var(--magentela);
 }
 
-.names{
+.names {
     animation: names 30s linear infinite;
 }
 
@@ -474,24 +500,25 @@ h2::after {
     0% {
         transform: translateX(0%);
     }
+
     100% {
         transform: translateX(-100%);
     }
 }
 
-.info-text{
+.info-text {
     z-index: 4;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
     box-shadow: 0 0 4px 0 var(--magentela) !important;
     border: 1px solid var(--magentela) !important;
 }
 
-.bg-other-black{
+.bg-other-black {
     background-color: var(--other-black);
 }
-
