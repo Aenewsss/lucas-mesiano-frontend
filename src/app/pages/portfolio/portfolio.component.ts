@@ -85,7 +85,6 @@ export class PortfolioComponent implements OnInit {
 
     const playIcon = document.getElementById(`play${controlsIdNumber}`)!
     const pauseIcon = document.getElementById(`pause${controlsIdNumber}`)!
-    console.log(video.paused)
     if (video.paused) {
       pauseIcon.style.opacity = "1"
       playIcon.style.opacity = "0"
@@ -100,7 +99,10 @@ export class PortfolioComponent implements OnInit {
 
   checkCardActive() {
     const event = { target: { id: "video3" } }
-    // this.videoClicked(event)
+    setTimeout(()=>{
+
+      this.videoClicked(event)
+    },1000)
   }
 
   videoClicked(event: any) {
@@ -116,10 +118,10 @@ export class PortfolioComponent implements OnInit {
     const currentCard = Object.values(portfolioCards).filter(el => el.children[0].id == elementId)[0]
 
     const centerDistance = this.screenCenter - currentCard.getBoundingClientRect().x
-    const elementWidth = 153
+    const elementWidth = this.screenCenter < 760 ? 102 :153
     const centerPosition = centerDistance - elementWidth;
 
-    const lastCardActive = document.querySelector(".card-active")!
+    const lastCardActive = document.querySelector(".card-active")!  
     lastCardActive.classList.remove("card-active")
 
     currentCard.classList.add("card-active")
@@ -155,8 +157,6 @@ export class PortfolioComponent implements OnInit {
 
     playIcon.style.opacity = "0"
     pauseIcon.style.opacity = "0"
-    console.log(this.verticais.filter(el => el.id === event.target.id))
-    console.log(event.target.id)
 
     video.src="asdas"
     video.src = this.verticais.filter(el => el.id === event.target.id)[0].url
