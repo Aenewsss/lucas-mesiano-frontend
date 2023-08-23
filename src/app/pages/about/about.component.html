@@ -1,13 +1,9 @@
 <section class="container text-center text-white mt-md-5 pt-md-5">
     <div class="row">
         <div class="col-md-4 d-md-block d-none">
-
-
-            <video class="img-fluid h-100 about-vertical border-magentela-shadow rounded"
-                src="https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/oculos-mesi.mp4"
-                alt="Mesi com óculos VR"
-                autoplay="true" loop="true"
-                ></video>
+            <video id="mesi-gif" class="img-fluid h-100 about-vertical border-magentela-shadow rounded"
+                src="https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/oculos-mesi.mp4" alt="Mesi com óculos VR"
+                autoplay loop muted playsinline onloadedmetadata="this.muted = true" oncanplay="this.play()"></video>
         </div>
         <div class="col-md-8 slidein d-flex flex-column justify-content-start  ps-md-5">
             <h1 class="display-1 text-start w-100">

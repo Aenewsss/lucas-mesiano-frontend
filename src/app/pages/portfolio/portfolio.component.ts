@@ -99,17 +99,20 @@ export class PortfolioComponent implements OnInit {
 
   checkCardActive() {
     const event = { target: { id: "video3" } }
-    setTimeout(()=>{
+    setTimeout(() => {
 
       this.videoClicked(event)
-    },1000)
+      this.playOrPauseVideo(event.target.id)
+    }, 1000)
   }
 
   videoClicked(event: any) {
     const elementId = event.target.id;
 
+    this.pauseOtherVideosPlaying(elementId)
+    
     this.translateVideo(elementId)
-
+    
     this.playOrPauseVideo(elementId)
   }
 
@@ -118,10 +121,10 @@ export class PortfolioComponent implements OnInit {
     const currentCard = Object.values(portfolioCards).filter(el => el.children[0].id == elementId)[0]
 
     const centerDistance = this.screenCenter - currentCard.getBoundingClientRect().x
-    const elementWidth = this.screenCenter < 760 ? 102 :153
+    const elementWidth = this.screenCenter < 760 ? 102 : 153
     const centerPosition = centerDistance - elementWidth;
 
-    const lastCardActive = document.querySelector(".card-active")!  
+    const lastCardActive = document.querySelector(".card-active")!
     lastCardActive.classList.remove("card-active")
 
     currentCard.classList.add("card-active")
@@ -158,8 +161,20 @@ export class PortfolioComponent implements OnInit {
     playIcon.style.opacity = "0"
     pauseIcon.style.opacity = "0"
 
-    video.src="asdas"
+    video.src = "asdas"
     video.src = this.verticais.filter(el => el.id === event.target.id)[0].url
+  }
+
+  pauseOtherVideosPlaying(videoId: string) {
+    console.log(videoId)
+    const videos = document.querySelectorAll(".portfolio-video")
+
+    videos.forEach((video: any) => {
+      if(videoId !== video.id){
+        video.pause()
+        this.outVideo({target: { id: video.id }})
+      }
+    })
   }
 
 }

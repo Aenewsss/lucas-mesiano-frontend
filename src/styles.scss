@@ -184,8 +184,10 @@ h2::after {
 }
 
 .img-feeedback {
-    max-width: 80px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 
@@ -265,7 +267,7 @@ h2::after {
 
 .img-reason {
     filter: drop-shadow(0 0 10px #D91D5A);
-    max-width: 200px;
+    max-width: 120px;
 }
 
 
