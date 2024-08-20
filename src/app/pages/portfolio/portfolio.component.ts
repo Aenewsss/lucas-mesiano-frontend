@@ -24,7 +24,7 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: "video2",
-      url: "../../../assets/videos/4-compostos-para-imunidade.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/4-compostos-para-imunidade.mp4",
       thumb: "../../../assets/thumbs/4-compostos-para-imunidade.png",
       controlsId: "2"
 
@@ -38,32 +38,32 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: "video4",
-      url: "../../../assets/videos/tipos-de-treinamentos.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/tipos-de-treinamentos.mp4",
       thumb: "../../../assets/thumbs/tipos-de-treinamentos.png",
       controlsId: "4"
     },
     {
       id: "video5",
-      url: "../../../assets/videos/eu-vendo-coragem.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/eu-vendo-coragem-finalizado.mp4",
       thumb: "../../../assets/thumbs/eu-vendo-coragem.png",
       controlsId: "5"
 
     },
     {
       id: "video6",
-      url: "../../../assets/videos/apresentacao-equipe-duuck-finalizado.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/apresentacao-equipe-duuck-finalizado.mp4",
       thumb: "../../../assets/thumbs/apresentacao-equipe-duuck-finalizado.png",
       controlsId: "6"
     },
     {
       id: "video7",
-      url: "../../../assets/videos/treino-dos-graduados.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/treino-graduados-2.mp4",
       thumb: "../../../assets/thumbs/treino-dos-graduados.png",
       controlsId: "7"
     },
     {
       id: "video8",
-      url: "../../../assets/videos/teaser.mp4",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/teaser.mp4",
       thumb: "../../../assets/thumbs/teaser.png",
       controlsId: "6"
     },
