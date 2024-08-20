@@ -45,7 +45,7 @@ export class PortfolioComponent implements OnInit {
     {
       id: "video5",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/eu-vendo-coragem-finalizado.mp4",
-      thumb: "../../../assets/portfolio/thumbs/eu-vendo-coragem.png",
+      thumb: "../../../assets/portfolio/thumbs/eu-vendo-coragem-finalizado",
       controlsId: "5"
 
     },
