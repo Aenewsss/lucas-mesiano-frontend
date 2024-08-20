@@ -65,7 +65,7 @@ export class PortfolioComponent implements OnInit {
       id: "video8",
       url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/teaser.mp4",
       thumb: "../../../../assets/portfolio/thumbs/teaser.png",
-      controlsId: "6"
+      controlsId: "8"
     },
   ]
 
