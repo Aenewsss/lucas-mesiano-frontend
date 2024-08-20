@@ -18,41 +18,53 @@ export class PortfolioComponent implements OnInit {
   verticais: IVerticais[] = [
     {
       id: "video1",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Agrobras%C3%ADlia+-+L%C3%A9o+Mendes.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Agroneg%C3%B3cio+-+Leo+Mendes.png",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Lan%C3%A7amento+de+curso+-+Mariana+Del+Monte.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Psicologia+-+Mariana+Del+Monte.png",
       controlsId: "1"
     },
     {
       id: "video2",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Arquiteta+-+Fl%C3%A1via+Cristina.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Arquiteta+-+Fl%C3%A1via+Cristina.png",
+      url: "../../../assets/videos/4-compostos-para-imunidade.mp4",
+      thumb: "../../../assets/thumbs/4-compostos-para-imunidade.png",
       controlsId: "2"
 
     },
     {
       id: "video3",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Dicas+para+deixar+o+quarto+mais+aconchegante.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Dicas+Arq+-+Fl%C3%A1via+Cristina.png",
+      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Arquiteta+-+Fl%C3%A1via+Cristina.mp4",
+      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Arquiteta+-+Fl%C3%A1via+Cristina.png",
       controlsId: "3"
 
     },
     {
       id: "video4",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/Depois+que+voce%CC%82+agendar+a+sua+aula+Finalizado.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Krav+Maga+-+Rodrigo+Neri.png",
+      url: "../../../assets/videos/tipos-de-treinamentos.mp4",
+      thumb: "../../../assets/thumbs/tipos-de-treinamentos.png",
       controlsId: "4"
     },
     {
       id: "video5",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Lan%C3%A7amento+de+curso+-+Mariana+Del+Monte.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Psicologia+-+Mariana+Del+Monte.png",
+      url: "../../../assets/videos/eu-vendo-coragem.mp4",
+      thumb: "../../../assets/thumbs/eu-vendo-coragem.png",
       controlsId: "5"
 
     },
     {
       id: "video6",
-      url: "https://lucasmesi.s3.sa-east-1.amazonaws.com/videos/C%C3%B3pia+de+Publi+-+Petrobras.mp4",
-      thumb: "https://lucasmesi.s3.sa-east-1.amazonaws.com/thumb/Publi+petrobras.png",
+      url: "../../../assets/videos/apresentacao-equipe-duuck-finalizado.mp4",
+      thumb: "../../../assets/thumbs/apresentacao-equipe-duuck-finalizado.png",
+      controlsId: "6"
+    },
+    {
+      id: "video7",
+      url: "../../../assets/videos/treino-dos-graduados.mp4",
+      thumb: "../../../assets/thumbs/treino-dos-graduados.png",
+      controlsId: "7"
+    },
+    {
+      id: "video8",
+      url: "../../../assets/videos/teaser.mp4",
+      thumb: "../../../assets/thumbs/teaser.png",
       controlsId: "6"
     },
   ]
@@ -64,8 +76,8 @@ export class PortfolioComponent implements OnInit {
     index: 0
   }
 
-  videoPaused: string = "../../../assets/icons/pause.svg";
-  videoPlayed: string = "../../../assets/icons/play.svg";
+  videoPaused: string = "../../../../assets/icons/pause.svg";
+  videoPlayed: string = "../../../../assets/icons/play.svg";
 
   videoHorizontalPaused: boolean = true;
 
